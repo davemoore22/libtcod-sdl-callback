@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="libtcod-sdl-callback" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/libtcod-sdl-callback" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/libtcod-sdl-callback" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-Wno-narrowing" />
+			<Add option="-Wno-switch" />
+			<Add option="-std=c++2a" />
+			<Add option="-pthread" />
+			<Add directory="../libtcod-1.11.1/src" />
+			<Add directory="inc" />
+		</Compiler>
+		<Linker>
+			<Add option="-ltcod" />
+			<Add option="-lSDL2" />
+			<Add option="-lSDL2_image" />
+			<Add option="-lstdc++fs" />
+			<Add option="-pthread" />
+			<Add option="-Wl,-rpath=." />
+			<Add library="../libtcod-1.11.1/libtcod.so" />
+			<Add directory="../libtcod-1.11.1" />
+		</Linker>
+		<Unit filename="inc/main.hpp" />
+		<Unit filename="inc/renderer.hpp" />
+		<Unit filename="src/main.cpp" />
+		<Unit filename="src/renderer.cpp" />
+		<Extensions>
+			<envvars />
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
